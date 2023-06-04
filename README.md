@@ -4,19 +4,19 @@ tiny amqp 0-9-1 streamable client
 
 Idea of this project is to provide easy of use client for work with rabbit-mq, which should allow to post and read message bodies as streams.
 
-#Introduction
+# Introduction
 Starting to work with Rabbit MQ it is often a bit complex to understand its philosophy: how to correctly make connection, then using of channels, publish and consume messages and so on. Even if we need to do only something simple, like just read messages from one Queue of some 3rd party app, we'll had to study a lot of things about Rabbit MQ, AMQP and so on. This client (in theoury) should to allow of easy start to work with Rabbit MQ.
 Another problem is that inspite of ability of Rabbit-MQ to transmit big-size messages (splitting them to chunks of liimited size), I didn't found in popular libraries for nodejs to process this correct. As I understand, they trying to cache all chunks in memory while message will not completely received, which is really not safe for nodejs and it's memory restrictions. Thats why I also added to this client ability to use message bodies as streams. In result, it should allow to save infromation, for example, to files directly after receive message chunks.
 
 NB: This client is not well-tested yet, so, please, be careful using it!
 
-#Install
+# Install
 
 `npm install https://github.com/pieropatron/amqp-client`
 
-#API
+# API
 
-##Create client
+## Create client
 
 ``` ts
 import {Client} from '@pieropatron/amqp-client';
@@ -38,7 +38,7 @@ const client = new Client({
 });
 ```
 
-##Work with exchanges
+## Work with exchanges
 
 ``` ts
 // get helper to work with exchanges
@@ -71,7 +71,7 @@ const unbound: boolean = await exchange.unbind({
 const deleted = await exchange.delete();
 ```
 
-##Work with queues
+## Work with queues
 
 ``` ts
 // get helper to work with queues
@@ -109,7 +109,7 @@ const purged: {message_count: number} = await queue.purge();
 const deleted: {message_count: number} = await queue.delete();
 ```
 
-##Publish messages
+## Publish messages
 
 Structure of "Published message":
 ``` ts
@@ -171,7 +171,6 @@ import {Client, PublishMessage} from '@pieropatron/amqp-client';
 const rs = new ReadableAsync<PublishMessage>;
 await rs.pushAsync({
 	body: createReadStream(__dirname + '/big.avi'),
-
 	callback: (error, result)=>{
 		console.log(error, result);
 		rs.push(null);
@@ -191,22 +190,22 @@ await publisher.publish({
 });
 ```
 
-##Consume messages
+## Consume messages
 
 Structure of "Consume message":
 
 ``` ts
 const message = {
 	// tag of consumer
-	consumer_tag: string,
-	// unique (for consumer) delivery number
-    delivery_tag: bigint,
+    	consumer_tag: string,
+    	// unique (for consumer) delivery number
+    	delivery_tag: bigint,
 	// is message redeliveried
-    redelivered: boolean,
+    	redelivered: boolean,
 	// name of source exchange
-    exchange: string,
+    	exchange: string,
 	// delivery routing key
-    routing_key: string,
+    	routing_key: string,
 	// same properties structure as for Publish message
 	properties?: {},
 	// Readable stream, with additional method toBuffer (for easy get content, if required)
@@ -219,8 +218,8 @@ const message = {
 	nack: (requeue: boolean)=>Promise<void>
 }
 ```
-NB: for message it is mandatory to call ack or nack after the process!
 
+NB: for message it is mandatory to call ack or nack after the process!
 
 Example:
 ``` ts

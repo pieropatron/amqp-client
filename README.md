@@ -2,6 +2,9 @@
 
 tiny amqp 0-9-1 streamable client
 
+[![NPM version](https://img.shields.io/npm/v/@pieropatron/amqp-client.svg?style=flat-square)](https://www.npmjs.com/package/@pieropatron/amqp-client)
+[![NPM downloads](https://img.shields.io/npm/dm/@pieropatron/amqp-client.svg?style=flat-square)](https://www.npmjs.com/package/@pieropatron/amqp-client)
+
 Idea of this project is to provide easy of use client for work with rabbit-mq, which should allow to post and read message bodies as streams.
 
 # Introduction
@@ -167,7 +170,7 @@ There are 2 ways for publishing messages in the client:
 
 Examples:
 ``` ts
-import {ReadableAsync, pipeline} from '@pieropatron/stream-async';
+import {ReadableAsync, pipeline} from '@pieropatron/amqp-client';
 import {createReadStream} from 'fs';
 import {Client, PublishMessage} from '@pieropatron/amqp-client';
 
@@ -228,7 +231,7 @@ NB: for message it is mandatory to call ack or nack after the process!
 Example:
 ``` ts
 import {ConsumeMessage} from '@pieropatron/amqp-client';
-import {WritableAsync, pipeline} from '@pieropatron/stream-async';
+import {WritableAsync, pipeline} from '@pieropatron/amqp-client';
 
 const consumer_transform = await client.consumer_transform({
 	/** Queue for consume */

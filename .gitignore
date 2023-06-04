@@ -1,0 +1,8 @@
+node_modules
+dist
+temp*.*
+temp*
+*.bak
+bak
+.vscode
+local-config.ts

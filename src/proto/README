@@ -1,0 +1,21 @@
+NB: Information below containing part of xml from https://www.rabbitmq.com/resources/specs/amqp0-9-1.extended.xml,
+author of project has no relation to content.
+
+
+<!DOCTYPE amqp SYSTEM "amqp.dtd">
+
+XML Notes
+
+We use entities to indicate repetition; attributes to indicate properties.
+
+We use the 'name' attribute as an identifier, usually within the context
+of the surrounding entities.
+
+We use spaces to separate words in names, so that we can print names in
+their natural form depending on the context - underlines for source code,
+hyphens for written text, etc.
+
+We do not enforce any particular validation mechanism but we support all
+mechanisms.  The protocol definition conforms to a formal grammar that is
+published separately in several technologies.
+

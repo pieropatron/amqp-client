@@ -37,5 +37,13 @@
   },
   "dependencies": {
     "@pieropatron/stream-async": "^1.0.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pieropatron/amqp-client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pieropatron/amqp-client/issues"
+  },
+  "homepage": "https://github.com/pieropatron/amqp-client"
 }

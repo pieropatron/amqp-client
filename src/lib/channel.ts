@@ -1,4 +1,5 @@
 import { Socket } from 'net';
+import fs from 'fs';
 import { pipeline } from 'stream';
 import { WritableAsync } from '@pieropatron/stream-async';
 import {
@@ -9,9 +10,10 @@ import { ENCODING, BufferReader, EMPTY_FRAME_SIZE } from 'proto/codec';
 import { FRAME_TYPES, FRAME_CONST } from 'proto/constant';
 import { HardError, BASIC_PROPERTIES_METHOD, ErrorToClose, CloseErrorBase } from './errors';
 import { SASL_MECHANISM, IMechanism } from './sasl';
-import * as PACKAGE from '../../package.json';
 import { DATE_CONST, CloneObject } from './utils';
 import { BufferWriter, writeSocket } from 'proto/codec';
+
+const PACKAGE = JSON.parse(fs.readFileSync(__dirname + "/../../package.json", 'utf-8'));
 
 type Callback = (error?: Error | null, result?: any)=>void;
 

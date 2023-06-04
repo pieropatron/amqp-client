@@ -12,6 +12,10 @@ NB: This client is not well-tested yet, so, please, be careful using it!
 
 # Install
 
+`npm install @pieropatron/amqp-client`
+
+OR
+
 `npm install https://github.com/pieropatron/amqp-client`
 
 # API

@@ -1,6 +1,6 @@
 import { Connection, ChannelChildAbstract, GetConnection } from './channel';
 import { HardError } from './errors';
-import { METHODS, API, EXCHANGE_BIND, EXCHANGE_UNBIND, QUEUE_DECLARE, QUEUE_DECLARE_OK, QUEUE_BIND, QUEUE_UNBIND, QUEUE_PURGE_OK, QUEUE_DELETE_OK } from 'proto/api';
+import { METHODS, API, EXCHANGE_BIND, EXCHANGE_UNBIND, QUEUE_DECLARE, QUEUE_DECLARE_OK, QUEUE_BIND, QUEUE_UNBIND, QUEUE_PURGE_OK, QUEUE_DELETE_OK } from '../proto/api';
 import { MergeObjects } from './utils';
 
 export class CommandChannel extends ChannelChildAbstract {

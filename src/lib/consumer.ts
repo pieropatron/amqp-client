@@ -1,7 +1,7 @@
 import { pipeline } from 'stream';
 import { ReadableAsync, TransformAsync, TransformAsyncOptions } from '@pieropatron/stream-async';
 import { ChannelChildAbstract, Connection } from './channel';
-import { BASIC_DELIVER, BASIC_PROPERTIES, METHODS, API, BASIC_CANCEL, BASIC_CONSUME_OK } from 'proto/api';
+import { BASIC_DELIVER, BASIC_PROPERTIES, METHODS, API, BASIC_CANCEL, BASIC_CONSUME_OK } from '../proto/api';
 import { HardError, SoftError } from './errors';
 
 type ConsumeChunkBody = {

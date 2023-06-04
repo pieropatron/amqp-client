@@ -20,15 +20,6 @@
       "es2022",
       "esnext.array",
       "DOM"
-    ],
-    "paths": {
-      "lib/*": ["./src/lib/*"],
-      "proto/*": ["./src/proto/*"]
-    }
-  },
-  "ts-node": {
-    "require": [
-      "tsconfig-paths/register"
     ]
   },
   "include": [

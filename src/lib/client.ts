@@ -1,7 +1,7 @@
 import { Socket } from 'net';
 import { ConnectionOptions as TLSConnectionOptions, TLSSocket } from 'tls';
 import { Connection as ConnectionInternal, ConnectionOptions as ConnectionOptionsInternal } from './channel';
-import { PORT as AMQPort } from 'proto/constant';
+import { PORT as AMQPort } from '../proto/constant';
 import { MergeObjects } from './utils';
 import { Queue, Exchange } from './commands';
 import { PublishStream, PublishMessage } from './publisher';

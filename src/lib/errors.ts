@@ -1,5 +1,5 @@
-import { REPLY_CODES } from 'proto/constant';
-import { METHODS_NAMES, METHODS, CHANNEL_CLOSE, CONNECTION_CLOSE } from 'proto/api';
+import { REPLY_CODES } from '../proto/constant';
+import { METHODS_NAMES, METHODS, CHANNEL_CLOSE, CONNECTION_CLOSE } from '../proto/api';
 
 type CLOSE_TYPE = CHANNEL_CLOSE | CONNECTION_CLOSE;
 

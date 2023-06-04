@@ -5,13 +5,13 @@ import { WritableAsync } from '@pieropatron/stream-async';
 import {
 	BASIC_PROPERTIES, METHODS_NAMES, DECODERS, METHODS, API,
 	CONNECTION_START, CONNECTION_TUNE, CONNECTION_TUNE_OK, CONNECTION_UPDATE_SECRET, CONNECTION_CLOSE, CHANNEL_FLOW, CHANNEL_CLOSE
-} from 'proto/api';
-import { ENCODING, BufferReader, EMPTY_FRAME_SIZE } from 'proto/codec';
-import { FRAME_TYPES, FRAME_CONST } from 'proto/constant';
+} from '../proto/api';
+import { ENCODING, BufferReader, EMPTY_FRAME_SIZE } from '../proto/codec';
+import { FRAME_TYPES, FRAME_CONST } from '../proto/constant';
 import { HardError, BASIC_PROPERTIES_METHOD, ErrorToClose, CloseErrorBase } from './errors';
 import { SASL_MECHANISM, IMechanism } from './sasl';
 import { DATE_CONST, CloneObject } from './utils';
-import { BufferWriter, writeSocket } from 'proto/codec';
+import { BufferWriter, writeSocket } from '../proto/codec';
 
 const PACKAGE = JSON.parse(fs.readFileSync(__dirname + "/../../package.json", 'utf-8'));
 

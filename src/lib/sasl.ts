@@ -1,4 +1,4 @@
-import { BufferReader, BufferWriter, ENCODING } from 'proto/codec';
+import { BufferReader, BufferWriter, ENCODING } from '../proto/codec';
 
 /**
  * Interface for describe SASL mechanism

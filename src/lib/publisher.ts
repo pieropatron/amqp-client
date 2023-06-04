@@ -1,7 +1,7 @@
 import { WritableAsync, WritableAsyncOptions, pipeline } from '@pieropatron/stream-async';
 import { Readable } from 'stream';
-import { API, BASIC_PROPERTIES, BASIC_RETURN, BASIC_ACK, METHODS } from 'proto/api';
-import { writeBodyOne } from 'proto/codec';
+import { API, BASIC_PROPERTIES, BASIC_RETURN, BASIC_ACK, METHODS } from '../proto/api';
+import { writeBodyOne } from '../proto/codec';
 import { ChannelChildAbstract, Connection, Response } from './channel';
 import { CloseErrorBase } from './errors';
 

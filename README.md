@@ -170,7 +170,7 @@ There are 2 ways for publishing messages in the client:
 
 Examples:
 ``` ts
-import {ReadableAsync, pipeline} from '@pieropatron/amqp-client';
+import {ReadableAsync, pipeline} from '@pieropatron/stream-async';
 import {createReadStream} from 'fs';
 import {Client, PublishMessage} from '@pieropatron/amqp-client';
 
@@ -231,7 +231,7 @@ NB: for message it is mandatory to call ack or nack after the process!
 Example:
 ``` ts
 import {ConsumeMessage} from '@pieropatron/amqp-client';
-import {WritableAsync, pipeline} from '@pieropatron/amqp-client';
+import {WritableAsync, pipeline} from '@pieropatron/stream-async';
 
 const consumer_transform = await client.consumer_transform({
 	/** Queue for consume */
